@@ -1,6 +1,7 @@
 const pixels = document.querySelectorAll('.pixel');
 const pixelArray = [];
 
+// constants
 const BLACK = [0, 0, 0];
 const YELLOW = [255, 255, 0];
 const DARKYELLOW = [50, 50, 0];
@@ -25,22 +26,76 @@ collection.on('value', function (snapshot) {
 
       switch (color) {
         case JSON.stringify(GREEN):
-          currentPixel.classList.add('door');
+          currentPixel.classList.add('open');
+          currentPixel.addEventListener('click', e => {
+            if (currentPixel.classList.contains('closed')) {
+              currentPixel.classList.remove('closed');
+              currentPixel.classList.add('open');
+            } else {
+              currentPixel.classList.remove('open');
+              currentPixel.classList.add('closed');
+            }
+          })
           break;
         case JSON.stringify(RED):
           currentPixel.classList.add('closed');
+          currentPixel.addEventListener('click', e => {
+            if (currentPixel.classList.contains('open')) {
+              currentPixel.classList.remove('open');
+              currentPixel.classList.add('closed');
+            } else {
+              currentPixel.classList.remove('closed');
+              currentPixel.classList.add('open');
+            }
+          })
           break;
         case JSON.stringify(YELLOW):
           currentPixel.classList.add('lit');
+          currentPixel.addEventListener('click', e => {
+            if (currentPixel.classList.contains('yeet')) {
+              currentPixel.classList.add('lit');
+              currentPixel.classList.remove('yeet');
+            } else {
+              currentPixel.classList.add('yeet');
+              currentPixel.classList.remove('lit');
+            }
+          })
           break;
         case JSON.stringify(DARKYELLOW):
           currentPixel.classList.add('yeet');
+          currentPixel.addEventListener('click', e => {
+            if (currentPixel.classList.contains('lit')) {
+              currentPixel.classList.add('yeet');
+              currentPixel.classList.remove('lit');
+            } else {
+              currentPixel.classList.add('lit');
+              currentPixel.classList.remove('yeet');
+            }
+          })
           break;
         case JSON.stringify(BLUE):
-          currentPixel.classList.add('plug');
+          currentPixel.classList.add('plugged');
+          currentPixel.addEventListener('click', e => {
+            if (currentPixel.classList.contains('unplugged')) {
+              currentPixel.classList.add('plugged');
+              currentPixel.classList.remove('unplugged');
+            } else {
+              currentPixel.classList.add('unplugged');
+              currentPixel.classList.remove('plugged');
+            }
+          })
           break;
         case JSON.stringify(DARKBLUE):
           currentPixel.classList.add('unplugged');
+          currentPixel.addEventListener('click', e => {
+            if (currentPixel.classList.contains('plugged')) {
+              currentPixel.classList.add('unplugged');
+              currentPixel.classList.remove('plugged');
+            } else {
+              currentPixel.classList.add('plugged');
+              currentPixel.classList.remove('unplugged');
+            }
+          })
           break;
         default:
           break;
@@ -62,13 +117,13 @@ collection.on('value', function (snapshot) {
         pixel.classList.add("plug");
         pixelArray.push(BLUE);
       } else if (i === 40 || i === 48 || i === 56) {
-        // Open doors
-        pixel.classList.add("door");
-        pixel.classList.add("door");
-        pixel.classList.add("door");
+        // Open opens
+        pixel.classList.add("open");
+        pixel.classList.add("open");
+        pixel.classList.add("open");
         pixelArray.push(GREEN);
       } else if (i === 47 || i === 55 || i === 63) {
-        // Closed doors
+        // Closed opens
         pixel.classList.add('closed');
         pixel.classList.add('closed');
         pixel.classList.add('closed');

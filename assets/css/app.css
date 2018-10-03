@@ -103,13 +103,13 @@ h3 {
 .yeet{
   background-color: darkgoldenrod;
 }
-.plug{
+.plugged{
   background-color: blue;
 }
 .unplugged{
   background-color: darkblue;
 }
-.door{
+.open{
   background-color: green;
 }
 .closed{
