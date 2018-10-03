@@ -12,7 +12,6 @@ databaseURL = "https://domotica-python.firebaseio.com/"
 try:
     # fetch the service account key JSON file contents
     firebase_cred = credentials.Certificate(serviceAccountKey)
-
     firebase_admin.initialize_app(firebase_cred, {
         "databaseURL": databaseURL
     })
