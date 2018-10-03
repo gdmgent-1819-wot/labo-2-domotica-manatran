@@ -3,45 +3,52 @@ const pixelArray = [];
 
 const BLACK = [0, 0, 0];
 const YELLOW = [255, 255, 0];
-const DARKYELLOW = [128, 128, 0];
+const DARKYELLOW = [50, 50, 0];
 const BLUE = [0, 0, 255];
-const DARKBLUE = [0, 0, 128];
+const DARKBLUE = [0, 0, 50];
 const GREEN = [0, 255, 0];
 const RED = [255, 0, 0];
 
-let user = JSON.parse(localStorage.getItem('user'));
+//Fetch from firebase
 var collection = firebase.database().ref('domotica');
 collection.on('value', function (snapshot) {
   let myHouse = snapshot.val()
   for (key in myHouse) {
     myHouse = myHouse[key].house;
   }
+  //If house in db - fetch - else - create
   if (myHouse) {
+    // seed pixels on screen
     for (let i = 0; i < myHouse.length; i++) {
       const currentPixel = pixels[i];
       const color = JSON.stringify(myHouse[i]);
-      // seed pixels on screen
+
       switch (color) {
-        case '[255,0,0]':
-          currentPixel.classList.add('closed');
-          break;
-        case '[255,255,0]':
-          currentPixel.classList.add('lit');
-          break;
-        case '[0,255,0]':
+        case JSON.stringify(GREEN):
           currentPixel.classList.add('door');
           break;
-        case '[0,0,255]':
+        case JSON.stringify(RED):
+          currentPixel.classList.add('closed');
+          break;
+        case JSON.stringify(YELLOW):
+          currentPixel.classList.add('lit');
+          break;
+        case JSON.stringify(DARKYELLOW):
+          currentPixel.classList.add('yeet');
+          break;
+        case JSON.stringify(BLUE):
           currentPixel.classList.add('plug');
+          break;
+        case JSON.stringify(DARKBLUE):
+          currentPixel.classList.add('unplugged');
           break;
         default:
           break;
       }
 
-
     }
   } else {
-    // Set template
+    // Set template for firebase
     for (let i = 0; i < pixels.length; i++) {
       const pixel = pixels[i];
       pixel.title = i;
