@@ -1,0 +1,116 @@
+body {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: #303030;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  box-sizing: border-box;
+  padding: 32px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.75);
+  background-color: #202020;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  border-radius: 4px;
+  flex-wrap: wrap;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 16px;
+  text-align: center;
+}
+form div {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  border: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  padding: 8px;
+  margin: 4px 0;
+}
+input[type="submit"] {
+  font-family: "Roboto Black", "Roboto", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-top: 16px;
+  background-color: #039be5;
+  cursor: pointer;
+}
+.err {
+  width: 100%;
+  color: red;
+  font-style: italic;
+  text-align: center;
+  margin-top: 16px;
+}
+
+main {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Roboto Black", "Roboto", sans-serif;
+  font-weight: 900;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: "Roboto Thin", "Roboto", sans-serif;
+  font-weight: 100;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  width: 512px;
+  height: 512px;
+}
+
+.pixel {
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px black;
+  background-color: #202020;
+}
+
+.lamp{
+  background-color: yellow;
+}
+.lit{
+  background-color: darkgoldenrod;
+}
+.plug{
+  background-color: blue;
+}
+.unplugged{
+  background-color: darkblue;
+}
+.door{
+  background-color: green;
+}
+.closed{
+  background-color: red;
+}

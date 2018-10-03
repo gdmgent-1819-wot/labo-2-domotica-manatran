@@ -1,12 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Domotica Python</title>
+  <link rel="icon" href="icon.jpg">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/app.css">
 </head>
+
 <body>
-  
+  <section class="login-container">
+    <form class="login">
+      <div>
+        <h2>Login</h2>
+        <input type="email" placeholder="E-mail" class="email-login">
+        <input type="password" placeholder="Password" class="password-login">
+      </div>
+      <input type="submit" value="Login">
+    </form>
+    <form class="signup">
+      <h2>Signup</h2>
+      <input type="email" placeholder="E-mail" class="email-signup">
+      <input type="password" placeholder="Password" class="password-signup">
+      <input type="submit" value="Signup">
+    </form>
+    <div class="err"></div>
+  </section>
+
+  <main>
+    <h1>Welcome!</h1>
+    <h3>Logged in as <span class="username">user</span></h3>
+    <section class="grid">
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+      <div class="pixel"></div>
+    </section>
+    <input type="submit" value="Logout" class="logout">
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB9p2YHbnG9EcPJcuHsC2SZKK27s9xPsfQ",
+      authDomain: "domotica-python.firebaseapp.com",
+      databaseURL: "https://domotica-python.firebaseio.com",
+      projectId: "domotica-python",
+      storageBucket: "domotica-python.appspot.com",
+      messagingSenderId: "943575480217"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
+
 </html>
