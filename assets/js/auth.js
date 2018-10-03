@@ -55,10 +55,12 @@ logout.addEventListener('click', e => {
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
+    localStorage.setItem('user', JSON.stringify(user))
     username.innerHTML = user.email;
     loginContainer.style.display = 'none';
     main.style.display = 'flex';
   } else {
+    localStorage.clear();
     main.style.display = 'none';
     loginContainer.style.display = 'flex';
   }
