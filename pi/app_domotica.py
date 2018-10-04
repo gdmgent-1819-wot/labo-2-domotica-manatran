@@ -30,11 +30,12 @@ def fetch_house():
     if house is not None:
         print("Found some stuff!")
         for key,val in house.items():
-            pixel = val['house']
+            pixel = val
             pixel_array.append(pixel)
 
         # looping through characters
         i = 0
+        print("Showing on Sense Hat")
         while i < len(pixel_array):
             pixel = pixel_array[i]
             sense_hat.set_pixels(pixel)
